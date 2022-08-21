@@ -1,0 +1,93 @@
+@use '../global' as g;
+
+.headerFeat{
+&--container{
+    @include g.tablet{
+        @include g.gridEven(2);
+    }
+}
+    &--img{
+        height:100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        @include g.tablet {
+              justify-content: flex-end;
+            }
+        img{
+@include g.square(12.5rem)
+        }
+      
+    }
+
+    &--para{
+        font-size: 1.25rem;
+    }
+}
+
+.featPlatform{
+    background-color: g.$light;
+    &--container {
+            @include g.tablet {
+                @include g.gridEven(2);
+            }
+        }
+*{
+    color: #333!important;
+}
+    &--img {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            @include g.tablet {
+    justify-content: flex-end;
+            }
+                 
+                   img {
+                       @include g.square(18.75rem)
+                   }
+            }
+    
+        }
+
+        .grid{
+&--container{
+    padding-block: 3rem;
+    @include g.gridEven;
+    row-gap: 1rem;
+    @include g.tablet{
+        @include g.gridEven(3);
+        column-gap: 2rem;
+        
+    }
+}
+            &--item{
+                padding:20px;
+              
+                height: 100%;
+                width: 100%;
+                @include g.gridAuto(2);
+                gap: 1.5rem;
+                box-shadow: g.$box-shadow;
+                border-radius: 10px;
+            }
+            &--para{
+                margin-block: 10px;
+                font-weight: 300;
+                color: #333;
+                line-height: 1.5;
+            }
+
+            &--long{
+                @include g.tablet{
+                    grid-column: 1/span 3;
+                }
+            }
+            &--mid{
+                @include g.tablet{
+                    grid-column: 1/span 2;
+                    grid-row: 2;
+                }
+            }
+        }

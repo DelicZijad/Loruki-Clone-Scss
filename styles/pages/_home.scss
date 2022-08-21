@@ -1,0 +1,213 @@
+@use '../global' as g;
+
+        
+.headerHome{
+margin-bottom: 9rem;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        height: 100px;
+        width: 100%;
+        bottom: -70px;
+        left: 0;
+        right: 0;
+        transform: skewY(-3deg);
+        background-color: white;
+        z-index: 1;
+    }
+    *{
+        color: white;
+        font-weight: 300;
+        z-index: 3;
+    }
+ 
+ &--title{
+    margin-bottom: 1.5rem;
+    @include g.tablet {
+            text-align: left !important;
+        }
+
+ }
+ &--para{
+    margin-bottom: 1.5rem;
+    @include g.tablet{
+        text-align: left !important;
+    }
+ }
+ &--btn{
+    border: 1px solid white;
+    width: max-content;
+   
+ }
+ &--txt{
+
+    @include g.animationX(right, -100%, 0);
+        animation: right 1s ease-out 0s 1 forwards;
+    @include g.tablet{
+   
+        align-items: flex-start !important;
+    }
+ }
+
+ &--formCard{
+
+
+    padding: 2.5rem 2rem;
+    background-color: white;
+    box-shadow: g.$box-shadow;
+    border-radius: 10px;
+    font-weight: 300;
+    @include g.animationX(left, 100%, 0, 15%, 15%);
+        animation: left 1s ease-out 0s 1 forwards;
+    @include g.tablet{
+        @include g.animationX(left, 100%, 0, 25%, 25%);
+            animation: left 1s ease-out 0s 1 forwards;
+    }
+ }
+ &--form{
+
+
+    &--title{
+        color: g.$dark !important;
+        margin-bottom: 2rem;
+    }
+ }
+
+ &--input{
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 0.25rem;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid rgba($color: #000000, $alpha:0.2);
+    color: g.$dark;
+    &:focus{
+       outline: none;
+    }
+  
+ }
+
+ &--submit{
+    font-weight: 400;
+    width: max-content;
+    font-size: 14px;
+ }
+}
+
+
+.homeInfo{
+
+    margin-bottom: 3rem;
+   &--title{
+    font-weight: 400;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+   
+    margin-inline: auto;
+    @include g.tablet{
+        width: 50%;
+    }
+   }
+   &--display{
+    @include g.gridEven;
+    gap: 2rem;
+
+    @include g.tablet{
+        @include g.gridEven(3);
+    }
+   }
+
+   &--item{
+    @include g.gridEven
+   }
+ 
+   &--number{
+    font-size: 2rem;
+    padding-block: 0.5rem 1rem;
+   }
+   &--txt{
+    font-size: 1.25rem;
+    color: g.$secondary;
+   }
+}
+
+.npm{
+    margin-bottom: 2rem;
+    &--container{
+        @include g.gridEven;
+        gap: 2rem;
+        @include g.tablet{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+
+    &--cards{
+        @include g.gridEven;
+            gap: 2rem;
+    }
+
+    &--para{
+        line-height: 1.5;
+        padding: 1.5rem 1rem;
+        font-size: 18px;
+        box-shadow: g.$box-shadow;
+        width: 100%;
+        font-weight: 400;
+        border-radius: 5px;
+    }
+}
+
+.homeCloud {
+
+    &--container{
+        @include g.tablet{
+            @include g.gridEven(2);
+            gap: 3rem;
+
+        }
+    }
+&--txt{
+   @include g.tablet{
+  align-items: center !important;
+   }
+}
+}
+.languages{
+
+    &--title{
+        margin-block: 1.5rem 3rem;
+        font-weight: 300;
+        color: g.$dark;
+    }
+ &--display{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:1.5rem;
+    @include g.desktop{
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+ }
+
+ &--card{
+  
+    padding: 1.25rem;
+    box-shadow: g.$box-shadow;
+    border-radius: 10px;
+&:hover,&:focus{
+@include g.animationY(up, 0, -10%);
+    animation: up 0.3s ease-out 0s 1 forwards;
+}
+    &--title{
+        margin-bottom:10px;
+      font-weight: 400;
+      font-size: 1.125rem;
+      text-align: center;
+    }
+ }
+}
